@@ -1,0 +1,629 @@
+/* =========================================================
+   ডিজাইন টোকেন (Design Tokens)
+   ========================================================= */
+:root {
+  --emerald-deep: #0b3d2e;
+  --emerald-mid: #145c46;
+  --teal-accent: #1b6b5a;
+  --gold: #c99a3d;
+  --gold-light: #e8c777;
+  --paper: #f7f4ec;
+  --paper-soft: #fffdf8;
+  --ink: #1c1c1c;
+  --ink-soft: #4a4a44;
+  --danger: #b3261e;
+  --success: #1b6b5a;
+
+  --radius-lg: 22px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  --shadow-soft: 0 10px 30px rgba(11, 61, 46, 0.12);
+  --shadow-card: 0 20px 50px rgba(11, 61, 46, 0.18);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+  background-color: var(--paper);
+  color: var(--ink);
+  margin: 0;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, .brand-text {
+  font-family: 'Baloo Da 2', 'Hind Siliguri', sans-serif;
+}
+
+/* subtle paper texture via layered radial gradients */
+body {
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(201, 154, 61, 0.07), transparent 40%),
+    radial-gradient(circle at 85% 30%, rgba(11, 61, 46, 0.06), transparent 45%);
+  background-attachment: fixed;
+}
+
+/* =========================================================
+   হেডার
+   ========================================================= */
+.site-header {
+  background: var(--emerald-deep);
+  box-shadow: var(--shadow-soft);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--paper-soft) !important;
+  font-weight: 700;
+  font-size: 1.25rem;
+}
+
+.brand-seal {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gold-light), var(--gold));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--emerald-deep);
+  font-size: 1rem;
+}
+
+.navbar-nav .nav-link {
+  color: rgba(247, 244, 236, 0.85) !important;
+  font-weight: 600;
+  padding: 0.5rem 1rem !important;
+  transition: color 0.2s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--gold-light) !important;
+}
+
+.navbar-toggler {
+  border-color: rgba(247, 244, 236, 0.4);
+}
+
+.navbar-toggler-icon {
+  filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+/* =========================================================
+   হিরো সেকশন
+   ========================================================= */
+.hero {
+  background: linear-gradient(160deg, var(--emerald-deep) 0%, var(--emerald-mid) 55%, var(--teal-accent) 100%);
+  color: var(--paper-soft);
+  padding: 4.5rem 0 5.5rem;
+  text-align: center;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  left: 0; right: 0; bottom: -1px;
+  height: 60px;
+  background: var(--paper);
+  clip-path: polygon(0 100%, 100% 100%, 100% 0, 50% 60%, 0 0);
+}
+
+.hero-emblem {
+  width: 84px;
+  height: 84px;
+  margin: 0 auto 1.5rem;
+  border-radius: 50%;
+  border: 2px solid var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.1rem;
+  color: var(--gold-light);
+  background: rgba(255, 255, 255, 0.06);
+  animation: floatIn 0.8s ease both;
+}
+
+@keyframes floatIn {
+  from { opacity: 0; transform: translateY(-14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-title {
+  font-weight: 800;
+  font-size: 2.4rem;
+  margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+  font-size: 1.05rem;
+  color: rgba(247, 244, 236, 0.85);
+  max-width: 560px;
+  margin: 0 auto 2.2rem;
+  line-height: 1.8;
+}
+
+.hero-steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.step-chip {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(232, 199, 119, 0.4);
+  padding: 0.5rem 1.1rem;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 0.92rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.step-no {
+  background: var(--gold);
+  color: var(--emerald-deep);
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+
+.step-divider {
+  width: 26px;
+  height: 1px;
+  background: rgba(232, 199, 119, 0.4);
+}
+
+@media (max-width: 576px) {
+  .step-divider { display: none; }
+  .hero-title { font-size: 1.9rem; }
+}
+
+/* =========================================================
+   ফর্ম সেকশন / গ্লাস কার্ড
+   ========================================================= */
+.form-section {
+  padding: 1rem 0 4rem;
+  margin-top: -1rem;
+}
+
+.glass-card {
+  background: rgba(255, 253, 248, 0.85);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  padding: 2.4rem;
+}
+
+@media (max-width: 576px) {
+  .glass-card { padding: 1.6rem 1.2rem; }
+}
+
+.card-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  margin-bottom: 1.8rem;
+  color: var(--emerald-deep);
+}
+
+.card-heading i {
+  font-size: 1.3rem;
+  color: var(--gold);
+}
+
+.card-heading h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin: 0;
+}
+
+.input-group-custom .form-label {
+  font-weight: 600;
+  color: var(--emerald-deep);
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.input-group-custom .form-label i {
+  color: var(--gold);
+  width: 18px;
+  text-align: center;
+}
+
+.form-control, .form-select {
+  border: 1.5px solid #ddd6c4;
+  border-radius: 50px;
+  padding: 0.75rem 1.2rem;
+  font-size: 1rem;
+  background-color: #fff;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.form-control:focus, .form-select:focus {
+  border-color: var(--teal-accent);
+  box-shadow: 0 0 0 4px rgba(27, 107, 90, 0.15);
+}
+
+.form-control.is-invalid, .form-select.is-invalid {
+  border-color: var(--danger);
+  background-image: none;
+}
+
+.invalid-feedback {
+  font-size: 0.87rem;
+  padding-left: 0.4rem;
+}
+
+.btn-submit {
+  background: linear-gradient(135deg, var(--emerald-mid), var(--emerald-deep));
+  color: var(--paper-soft);
+  border: none;
+  border-radius: 50px;
+  padding: 0.9rem 1.5rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.3px;
+  box-shadow: 0 10px 24px rgba(11, 61, 46, 0.28);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(11, 61, 46, 0.35);
+  color: var(--paper-soft);
+}
+
+.btn-submit:active { transform: translateY(0); }
+
+/* =========================================================
+   পেমেন্ট সেকশন
+   ========================================================= */
+.payment-section {
+  padding: 1rem 0 4rem;
+  animation: fadeUp 0.5s ease both;
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-heading {
+  margin-bottom: 2.2rem;
+}
+
+.section-heading i {
+  font-size: 1.8rem;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.section-heading h2 {
+  color: var(--emerald-deep);
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.section-heading p {
+  color: var(--ink-soft);
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.pay-card {
+  background: var(--paper-soft);
+  border-radius: var(--radius-md);
+  padding: 1.8rem 1.4rem;
+  text-align: center;
+  box-shadow: var(--shadow-soft);
+  border-top: 4px solid var(--teal-accent);
+  height: 100%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.pay-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-card);
+}
+
+.pay-bkash { border-top-color: #e2136e; }
+.pay-nagad { border-top-color: #f7941d; }
+.pay-rocket { border-top-color: #8b3ff0; }
+
+.pay-logo {
+  width: 56px;
+  height: 56px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  background: rgba(27, 107, 90, 0.08);
+  color: var(--teal-accent);
+}
+
+.pay-bkash .pay-logo { color: #e2136e; background: rgba(226, 19, 110, 0.08); }
+.pay-nagad .pay-logo { color: #f7941d; background: rgba(247, 148, 29, 0.08); }
+.pay-rocket .pay-logo { color: #8b3ff0; background: rgba(139, 63, 240, 0.08); }
+
+.pay-card h3 {
+  font-weight: 700;
+  color: var(--emerald-deep);
+  margin-bottom: 0.3rem;
+}
+
+.pay-label {
+  font-size: 0.85rem;
+  color: var(--ink-soft);
+  margin-bottom: 1rem;
+}
+
+.pay-number-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  background: var(--paper);
+  border: 1.5px dashed #ccc3a8;
+  border-radius: 50px;
+  padding: 0.5rem 0.6rem 0.5rem 1.1rem;
+}
+
+.pay-number {
+  font-weight: 700;
+  font-size: 1.05rem;
+  letter-spacing: 0.5px;
+  color: var(--ink);
+  direction: ltr;
+}
+
+.copy-btn {
+  border: none;
+  background: var(--teal-accent);
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.copy-btn:hover { background: var(--emerald-deep); transform: scale(1.06); }
+.copy-btn:active { transform: scale(0.96); }
+
+.instructions-card {
+  background: var(--paper-soft);
+  border-radius: var(--radius-md);
+  padding: 1.8rem 2rem;
+  margin-top: 2.5rem;
+  box-shadow: var(--shadow-soft);
+  border-left: 5px solid var(--gold);
+}
+
+.instructions-card h4 {
+  color: var(--emerald-deep);
+  font-weight: 700;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.instructions-card ol {
+  margin: 0;
+  padding-left: 1.3rem;
+  color: var(--ink-soft);
+  line-height: 2;
+}
+
+.btn-confirm {
+  background: linear-gradient(135deg, var(--gold), #b5852f);
+  color: var(--emerald-deep);
+  border: none;
+  border-radius: 50px;
+  padding: 0.9rem 2rem;
+  font-weight: 700;
+  font-size: 1.05rem;
+  box-shadow: 0 10px 24px rgba(201, 154, 61, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.btn-confirm:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(201, 154, 61, 0.42);
+  color: var(--emerald-deep);
+}
+
+.confirm-note {
+  margin-top: 1rem;
+  font-size: 0.88rem;
+  color: var(--ink-soft);
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* =========================================================
+   সহায়তা সেকশন
+   ========================================================= */
+.help-section {
+  background: var(--paper-soft);
+  padding: 4rem 0;
+  border-top: 1px solid #e9e3d2;
+}
+
+.help-icon {
+  font-size: 2.2rem;
+  color: var(--gold);
+  margin-bottom: 1rem;
+}
+
+.help-section h2 {
+  color: var(--emerald-deep);
+  font-weight: 700;
+  margin-bottom: 0.8rem;
+}
+
+.help-section p {
+  color: var(--ink-soft);
+  margin-bottom: 1.2rem;
+}
+
+.help-contact {
+  font-weight: 600;
+  color: var(--teal-accent);
+  font-size: 1.05rem;
+}
+
+/* =========================================================
+   ফুটার
+   ========================================================= */
+.site-footer {
+  background: var(--emerald-deep);
+  color: rgba(247, 244, 236, 0.75);
+  padding: 2.5rem 0;
+  text-align: center;
+}
+
+.footer-seal {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 1rem;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold-light);
+}
+
+.footer-note {
+  font-size: 0.85rem;
+  opacity: 0.75;
+}
+
+/* =========================================================
+   টোস্ট
+   ========================================================= */
+#copyToast {
+  background: var(--emerald-deep);
+  color: var(--paper-soft);
+  border-radius: var(--radius-sm);
+}
+
+/* =========================================================
+   লোডিং ওভারলে
+   ========================================================= */
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 61, 46, 0.92);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--paper-soft);
+  gap: 1.2rem;
+}
+
+.loader-ring {
+  width: 54px;
+  height: 54px;
+  border: 4px solid rgba(232, 199, 119, 0.25);
+  border-top-color: var(--gold-light);
+  border-radius: 50%;
+  animation: spin 0.9s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* =========================================================
+   সাকসেস মডাল
+   ========================================================= */
+.success-modal-content {
+  border-radius: var(--radius-lg);
+  border: none;
+  padding: 1rem;
+}
+
+.success-icon {
+  width: 70px;
+  height: 70px;
+  margin: 0.5rem auto 1.2rem;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--teal-accent), var(--emerald-deep));
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  animation: popIn 0.4s ease both;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0); opacity: 0; }
+  70% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.success-modal-content h3 {
+  color: var(--emerald-deep);
+  font-weight: 700;
+}
+
+.success-modal-content p {
+  color: var(--ink-soft);
+  line-height: 1.8;
+}
+
+.btn-close-modal {
+  background: var(--emerald-deep);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 0.6rem 2rem;
+  font-weight: 600;
+  margin-top: 0.6rem;
+}
+
+.btn-close-modal:hover {
+  background: var(--teal-accent);
+  color: #fff;
+}
+
+/* smooth scroll */
+html {
+  scroll-behavior: smooth;
+}
+
+/* reduced motion respect */
+@media (prefers-reduced-motion: reduce) {
+  * { animation: none !important; transition: none !important; }
+  html { scroll-behavior: auto; }
+}
