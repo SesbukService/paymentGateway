@@ -1,0 +1,266 @@
+
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>রেজিস্ট্রেশন | অনলাইন আবেদন ফর্ম</title>
+<meta name="description" content="সহজে ও নিরাপদে অনলাইন রেজিস্ট্রেশন সম্পন্ন করুন।">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Bootstrap 5 -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+<!-- Font Awesome -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <nav class="navbar navbar-expand-lg">
+    <div class="container">
+      <a class="navbar-brand" href="#top">
+        <span class="brand-seal"><i class="fa-solid fa-stamp"></i></span>
+        <span class="brand-text">সেসবুক মেম্বারশীপ ফর্ম</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="মেনু খুলুন">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav ms-auto text-center">
+          <li class="nav-item"><a class="nav-link" href="#form-section">রেজিস্ট্রেশন</a></li>
+          <li class="nav-item"><a class="nav-link" href="#payment-section">পেমেন্ট</a></li>
+          <li class="nav-item"><a class="nav-link" href="#help-section">সহায়তা</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Hero -->
+<section id="top" class="hero">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-8 text-center">
+        <div class="hero-emblem">
+          <i class="fa-regular fa-file-lines"></i>
+        </div>
+        <h1 class="hero-title">আপনার আবেদন শুরু করুন</h1>
+        <p class="hero-subtitle">নিচের ফর্মটি সঠিকভাবে পূরণ করুন। প্রতিটি ধাপ পরিষ্কারভাবে দেখানো হয়েছে, যাতে আপনি নিশ্চিন্তে আবেদন সম্পন্ন করতে পারেন।</p>
+        <div class="hero-steps">
+          <div class="step-chip"><span class="step-no">১</span> তথ্য পূরণ</div>
+          <div class="step-divider"></div>
+          <div class="step-chip"><span class="step-no">২</span> ফি প্রদান</div>
+          <div class="step-divider"></div>
+          <div class="step-chip"><span class="step-no">৩</span> নিশ্চিতকরণ</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Registration Form -->
+<section id="form-section" class="form-section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-7 col-md-9">
+        <div class="glass-card">
+          <div class="card-heading">
+            <i class="fa-solid fa-pen-to-square"></i>
+            <h2>আবেদনকারীর তথ্য</h2>
+          </div>
+
+          <form id="registrationForm" novalidate>
+
+            <div class="mb-4 input-group-custom">
+              <label for="fullName" class="form-label"><i class="fa-solid fa-user"></i> পূর্ণ নাম</label>
+              <input type="text" class="form-control" id="fullName" placeholder="যেমনঃ মোহাম্মদ রহিম উদ্দিন" required>
+              <div class="invalid-feedback">অনুগ্রহ করে আপনার পূর্ণ নাম লিখুন।</div>
+            </div>
+
+            <div class="mb-4 input-group-custom">
+              <label for="age" class="form-label"><i class="fa-solid fa-cake-candles"></i> বয়স</label>
+              <input type="number" class="form-control" id="age" placeholder="যেমনঃ ২৫" min="1" max="120" required>
+              <div class="invalid-feedback">অনুগ্রহ করে সঠিক বয়স লিখুন (সংখ্যায়)।</div>
+            </div>
+
+            <div class="mb-4 input-group-custom">
+              <label for="district" class="form-label"><i class="fa-solid fa-location-dot"></i> জেলা</label>
+              <select class="form-select" id="district" required>
+                <option value="" selected disabled>জেলা নির্বাচন করুন</option>
+              </select>
+              <div class="invalid-feedback">অনুগ্রহ করে আপনার জেলা নির্বাচন করুন।</div>
+            </div>
+
+            <div class="mb-4 input-group-custom">
+              <label for="mobile" class="form-label"><i class="fa-solid fa-mobile-screen-button"></i> মোবাইল নম্বর</label>
+              <input type="tel" class="form-control" id="mobile" placeholder="০১XXXXXXXXX" maxlength="11" required>
+              <div class="invalid-feedback">অনুগ্রহ করে সঠিক ১১ সংখ্যার মোবাইল নম্বর লিখুন।</div>
+            </div>
+
+            <div class="mb-4 input-group-custom">
+              <label for="workArea" class="form-label"><i class="fa-solid fa-briefcase"></i> কাজের এরিয়া / কর্মক্ষেত্র</label>
+              <input type="text" class="form-control" id="workArea" placeholder="যেমনঃ ঢাকা, সিলেট, চট্টগ্রাম ইত্যাদি" required>
+              <div class="invalid-feedback">অনুগ্রহ করে আপনার কর্মক্ষেত্র লিখুন।</div>
+            </div>
+
+            <button type="submit" class="btn btn-submit w-100">
+              <i class="fa-solid fa-arrow-right-to-bracket"></i> রেজিস্ট্রেশন করুন
+            </button>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Payment Section (hidden until form submitted) -->
+<section id="payment-section" class="payment-section d-none">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-9">
+
+        <div class="section-heading text-center">
+          <i class="fa-solid fa-wallet"></i>
+          <h2>রেজিস্ট্রেশন ফি ২০০/- প্রদান করুন</h2>
+          <p>নিচের যেকোনো একটি মাধ্যমে ফি পাঠান, তারপর নম্বরটি কপি করে Transaction সম্পন্ন করুন।</p>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="pay-card pay-bkash">
+              <div class="pay-logo"><i class="fa-solid fa-mobile-retro"></i></div>
+              <h3>বিকাশ</h3>
+              <p class="pay-label">পার্সোনাল নম্বর (Send Money)</p>
+              <div class="pay-number-row">
+                <span class="pay-number" id="bkashNumber">01633932774</span>
+                <button class="copy-btn" data-copy-target="bkashNumber" aria-label="বিকাশ নম্বর কপি করুন">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="pay-card pay-nagad">
+              <div class="pay-logo"><i class="fa-solid fa-money-bill-transfer"></i></div>
+              <h3>নগদ</h3>
+              <p class="pay-label">পার্সোনাল নম্বর (Send Money)</p>
+              <div class="pay-number-row">
+                <span class="pay-number" id="nagadNumber">01633932774</span>
+                <button class="copy-btn" data-copy-target="nagadNumber" aria-label="নগদ নম্বর কপি করুন">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="pay-card pay-rocket">
+              <div class="pay-logo"><i class="fa-solid fa-rocket"></i></div>
+              <h3>রকেট</h3>
+              <p class="pay-label">পার্সোনাল নম্বর (Send Money)</p>
+              <div class="pay-number-row">
+                <span class="pay-number" id="rocketNumber">01633932774</span>
+                <button class="copy-btn" data-copy-target="rocketNumber" aria-label="রকেট নম্বর কপি করুন">
+                  <i class="fa-regular fa-copy"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="instructions-card">
+          <h4><i class="fa-solid fa-circle-info"></i> পেমেন্ট নির্দেশনা</h4>
+          <ol>
+            <li>উপরের যেকোনো একটি নম্বরে রেজিস্ট্রেশন ফি পাঠান।</li>
+            <li>টাকা পাঠানোর পরে Transaction সম্পন্ন করুন।</li>
+            <li>Payment-এর Screenshot সংরক্ষণ করুন — এটি যাচাইয়ের সময় প্রয়োজন হতে পারে।</li>
+            <li>প্রয়োজনে নিচের সহায়তা বিভাগ থেকে Admin-এর সাথে যোগাযোগ করুন।</li>
+          </ol>
+        </div>
+
+        <div class="text-center mt-4">
+          <button id="confirmPaymentBtn" class="btn btn-confirm">
+            <i class="fa-solid fa-paper-plane"></i> আমি পেমেন্ট সম্পন্ন করেছি
+          </button>
+          <p class="confirm-note">এই বাটনে ক্লিক করলে আপনার তথ্য জমা হবে। রেজিস্ট্রেশন চূড়ান্তভাবে নিশ্চিত হওয়ার আগে আমাদের টিম পেমেন্ট যাচাই করবে।</p>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Help Section -->
+<section id="help-section" class="help-section">
+  <div class="container">
+    <div class="row justify-content-center text-center">
+      <div class="col-lg-7">
+        <i class="fa-solid fa-headset help-icon"></i>
+        <h2>সহায়তা প্রয়োজন?</h2>
+        <p>রেজিস্ট্রেশন বা পেমেন্ট সংক্রান্ত যেকোনো প্রশ্নে আমাদের সাথে যোগাযোগ করুন।</p>
+        <div class="help-contact">
+          <i class="fa-solid fa-phone"></i> ০১XXXXXXXXX &nbsp;|&nbsp; <i class="fa-regular fa-envelope"></i> https://telegram.me/Sesbukchat
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="site-footer">
+  <div class="container text-center">
+    <div class="footer-seal"><i class="fa-solid fa-stamp"></i></div>
+    <p class="mb-1">© 2026 আবেদন কেন্দ্র। সর্বস্বত্ব সংরক্ষিত।</p>
+    <p class="footer-note">এই ওয়েবসাইটটি তথ্য গ্রহণ ও যোগাযোগের উদ্দেশ্যে তৈরি।</p>
+  </div>
+</footer>
+
+<!-- Toast container -->
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="copyToast" class="toast align-items-center border-0" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="d-flex">
+      <div class="toast-body">
+        <i class="fa-solid fa-circle-check me-2"></i>
+        <span id="toastMessage">কপি হয়েছে।</span>
+      </div>
+      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="বন্ধ করুন"></button>
+    </div>
+  </div>
+</div>
+
+<!-- Loading overlay -->
+<div id="loadingOverlay" class="loading-overlay d-none">
+  <div class="loader-ring"></div>
+  <p>অনুগ্রহ করে অপেক্ষা করুন...</p>
+</div>
+
+<!-- Success Modal -->
+<div class="modal fade" id="successModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content success-modal-content">
+      <div class="modal-body text-center">
+        <div class="success-icon"><i class="fa-solid fa-check"></i></div>
+        <h3>আবেদন জমা হয়েছে</h3>
+        <p>আপনার আবেদন ও পেমেন্ট তথ্য সফলভাবে জমা নেওয়া হয়েছে।</p>
+        <p>আমাদের টিম আপনার পেমেন্ট যাচাই করার পর আপনার দেওয়া মোবাইল নম্বরে যোগাযোগ করবে।</p>
+        <p class="fw-semibold">ধন্যবাদ।</p>
+        <button type="button" class="btn btn-close-modal" data-bs-dismiss="modal">বন্ধ করুন</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
+</body>
+</html>
