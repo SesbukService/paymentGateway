@@ -19,7 +19,7 @@ const districts = [
    ========================================================= */
 const paymentNumbers = {
   bkashNumber: "01633932774",
-  nagadNumber: "01633932774",
+  nagadNumber: "01722144619",
   rocketNumber: "01838962362"
 };
 
